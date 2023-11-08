@@ -33,5 +33,16 @@ namespace PixisAirGroupProject.Properties {
                 return ((string)(this["PixisAirConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Provider=IBMDA400.DataSource.1;Data Source=DEATHSTAR.GTC.EDU;User ID=itpa609;Init" +
+            "ial Catalog=S101FF5C")]
+        public string ConnectionString {
+            get {
+                return ((string)(this["ConnectionString"]));
+            }
+        }
     }
 }
