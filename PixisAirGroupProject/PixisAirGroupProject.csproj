@@ -63,6 +63,7 @@
     <Compile Include="Airports.Designer.cs">
       <DependentUpon>Airports.cs</DependentUpon>
     </Compile>
+    <Compile Include="CadenClass.cs" />
     <Compile Include="Crew.cs">
       <SubType>Form</SubType>
     </Compile>
