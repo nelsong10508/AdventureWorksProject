@@ -46,12 +46,23 @@
             this.allAirportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.flightCrewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.maintenanceLogsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addRecordsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addToAirportTableToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addRecordToResHistTableToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addAirplaneToAirplaneTableToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // flightBtn
             // 
-            this.flightBtn.Location = new System.Drawing.Point(89, 78);
+            this.flightBtn.Location = new System.Drawing.Point(71, 96);
             this.flightBtn.Name = "flightBtn";
             this.flightBtn.Size = new System.Drawing.Size(89, 38);
             this.flightBtn.TabIndex = 0;
@@ -61,7 +72,7 @@
             // 
             // airplaneBtn
             // 
-            this.airplaneBtn.Location = new System.Drawing.Point(326, 78);
+            this.airplaneBtn.Location = new System.Drawing.Point(237, 96);
             this.airplaneBtn.Name = "airplaneBtn";
             this.airplaneBtn.Size = new System.Drawing.Size(89, 38);
             this.airplaneBtn.TabIndex = 1;
@@ -71,7 +82,7 @@
             // 
             // cityBtn
             // 
-            this.cityBtn.Location = new System.Drawing.Point(554, 78);
+            this.cityBtn.Location = new System.Drawing.Point(156, 288);
             this.cityBtn.Name = "cityBtn";
             this.cityBtn.Size = new System.Drawing.Size(89, 38);
             this.cityBtn.TabIndex = 2;
@@ -81,7 +92,7 @@
             // 
             // airportBtn
             // 
-            this.airportBtn.Location = new System.Drawing.Point(326, 154);
+            this.airportBtn.Location = new System.Drawing.Point(237, 161);
             this.airportBtn.Name = "airportBtn";
             this.airportBtn.Size = new System.Drawing.Size(89, 38);
             this.airportBtn.TabIndex = 3;
@@ -91,7 +102,7 @@
             // 
             // crewBtn
             // 
-            this.crewBtn.Location = new System.Drawing.Point(554, 154);
+            this.crewBtn.Location = new System.Drawing.Point(237, 229);
             this.crewBtn.Name = "crewBtn";
             this.crewBtn.Size = new System.Drawing.Size(89, 38);
             this.crewBtn.TabIndex = 4;
@@ -101,7 +112,7 @@
             // 
             // logsBtn
             // 
-            this.logsBtn.Location = new System.Drawing.Point(326, 247);
+            this.logsBtn.Location = new System.Drawing.Point(71, 229);
             this.logsBtn.Name = "logsBtn";
             this.logsBtn.Size = new System.Drawing.Size(89, 38);
             this.logsBtn.TabIndex = 5;
@@ -111,7 +122,7 @@
             // 
             // citiesBtn
             // 
-            this.citiesBtn.Location = new System.Drawing.Point(89, 154);
+            this.citiesBtn.Location = new System.Drawing.Point(71, 161);
             this.citiesBtn.Name = "citiesBtn";
             this.citiesBtn.Size = new System.Drawing.Size(89, 38);
             this.citiesBtn.TabIndex = 6;
@@ -121,7 +132,7 @@
             // 
             // exitBtn
             // 
-            this.exitBtn.Location = new System.Drawing.Point(699, 400);
+            this.exitBtn.Location = new System.Drawing.Point(756, 400);
             this.exitBtn.Name = "exitBtn";
             this.exitBtn.Size = new System.Drawing.Size(89, 38);
             this.exitBtn.TabIndex = 7;
@@ -139,10 +150,11 @@
             this.departingAndArrivingCitiesToolStripMenuItem,
             this.allAirportsToolStripMenuItem,
             this.flightCrewToolStripMenuItem,
-            this.maintenanceLogsToolStripMenuItem});
+            this.maintenanceLogsToolStripMenuItem,
+            this.addRecordsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(857, 24);
             this.menuStrip1.TabIndex = 8;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -210,11 +222,108 @@
             this.maintenanceLogsToolStripMenuItem.Text = "Maintenance Logs";
             this.maintenanceLogsToolStripMenuItem.Click += new System.EventHandler(this.maintenanceLogsToolStripMenuItem_Click);
             // 
+            // addRecordsToolStripMenuItem
+            // 
+            this.addRecordsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addToAirportTableToolStripMenuItem,
+            this.addToolStripMenuItem,
+            this.addRecordToResHistTableToolStripMenuItem,
+            this.addAirplaneToAirplaneTableToolStripMenuItem});
+            this.addRecordsToolStripMenuItem.Name = "addRecordsToolStripMenuItem";
+            this.addRecordsToolStripMenuItem.Size = new System.Drawing.Size(86, 20);
+            this.addRecordsToolStripMenuItem.Text = "Add Records";
+            // 
+            // addToAirportTableToolStripMenuItem
+            // 
+            this.addToAirportTableToolStripMenuItem.Name = "addToAirportTableToolStripMenuItem";
+            this.addToAirportTableToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
+            this.addToAirportTableToolStripMenuItem.Text = "Add to Airport to Airport Table";
+            // 
+            // addToolStripMenuItem
+            // 
+            this.addToolStripMenuItem.Name = "addToolStripMenuItem";
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
+            this.addToolStripMenuItem.Text = "Add Route to Route Table";
+            // 
+            // addRecordToResHistTableToolStripMenuItem
+            // 
+            this.addRecordToResHistTableToolStripMenuItem.Name = "addRecordToResHistTableToolStripMenuItem";
+            this.addRecordToResHistTableToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
+            this.addRecordToResHistTableToolStripMenuItem.Text = "Add Record to ResHist Table";
+            // 
+            // addAirplaneToAirplaneTableToolStripMenuItem
+            // 
+            this.addAirplaneToAirplaneTableToolStripMenuItem.Name = "addAirplaneToAirplaneTableToolStripMenuItem";
+            this.addAirplaneToAirplaneTableToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
+            this.addAirplaneToAirplaneTableToolStripMenuItem.Text = "Add Airplane to Airplane Table";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(66, 48);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(260, 25);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Buttons to Display Data";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(460, 48);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(366, 25);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Buttons to Add Records to Tables";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(756, 105);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(89, 38);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Add to Airplane Table";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(659, 105);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(89, 38);
+            this.button2.TabIndex = 12;
+            this.button2.Text = "Add to ResHist Table";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(562, 105);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(89, 38);
+            this.button3.TabIndex = 13;
+            this.button3.Text = "Add to Route Table";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(465, 105);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(89, 38);
+            this.button4.TabIndex = 14;
+            this.button4.Text = "Add to Airport Table";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(857, 450);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.exitBtn);
             this.Controls.Add(this.citiesBtn);
             this.Controls.Add(this.logsBtn);
@@ -226,7 +335,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Caden, Mason and Greg\'s Group Project";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -255,6 +364,17 @@
         private System.Windows.Forms.ToolStripMenuItem allAirportsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem flightCrewToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem maintenanceLogsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addRecordsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addToAirportTableToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addRecordToResHistTableToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addAirplaneToAirplaneTableToolStripMenuItem;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
     }
 }
 
