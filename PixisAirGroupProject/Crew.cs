@@ -1,4 +1,6 @@
-﻿using System;
+﻿using IBM.Data.DB2.iSeries;
+using InsertPractice;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,12 +15,9 @@ namespace PixisAirGroupProject
 {
     public partial class Crew : Form
     {
-        SqlConnection connection;
-        string connectionString;
-        string SQL;
-        //use dataAdabpter and DataSet opposed to command object and DataReader
-        SqlDataAdapter adapter;
-        DataSet data;
+        iDB2Connection conn;
+        iDB2DataAdapter adapter;
+        DataSet dataSet;
         public Crew()
         {
             InitializeComponent();
@@ -26,7 +25,9 @@ namespace PixisAirGroupProject
 
         private void exitBtn_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Form1 form1 = new Form1();
+            form1.Show();
+            this.Hide();
         }
 
         private void crewBtn_Click(object sender, EventArgs e)
@@ -34,35 +35,38 @@ namespace PixisAirGroupProject
             // clears the list box everytime a new button is pressed
             listBox1.Items.Clear();
 
-            connectionString = "Data Source=V2StudentPOC;Initial Catalog=PixisAir;" +
-               "Persist Security Info=True;User ID=student;Password=ichooseGateway";
-            //button click from ID entered to textbox...following the SQL statement is how to enter ID into the text box and when 
-            //the button is clicked it displays in the listbox
-            SQL = "SELECT crew.* FROM crew JOIN flight on flight.FLIGHTNO = crew.FlightNo WHERE flight.FLIGHTNO = '"
-                + textBox1.Text + "'";
+            string sql;
+            string connName = "IBMConnectionStringDev";
+
             try
             {
-                //create connection string object using the connection string parameter
-                connection = new SqlConnection(connectionString);
-                //create SqlDataAdapter passing in the SQL string and the connection string 
-                adapter = new SqlDataAdapter(SQL, connection);
                 //create a dataSet
-                data = new DataSet();
-                adapter.Fill(data);
-                //loop through the dataTable row adding data row to listbox
-                foreach (DataRow dataRow in data.Tables[0].Rows)
-                    //Columns[].ColumnName is how you add the column name with the data in the table
-                    //Lines 57-62 displays the column name and the data associated with its respected column when the button is clicked
-                    //Data rows and columns work like arrays 
-                    listBox1.Items.Add(data.Tables[0].Columns[2].ColumnName + ": " + dataRow[2] + ",  " +
-                                      data.Tables[0].Columns[3].ColumnName + ": " + dataRow[3] + ",  " +
-                                      data.Tables[0].Columns[4].ColumnName + ": " + dataRow[4] + ",  " +
-                                      data.Tables[0].Columns[5].ColumnName + ": " + dataRow[5] + ",  " +
-                                      data.Tables[0].Columns[6].ColumnName + ": " + dataRow[6] + ",  " +
-                                      data.Tables[0].Columns[7].ColumnName + ": " + dataRow[7]);
-                connection.Close();//close the connection
+                conn = new iDB2Connection(DataHelper.ConnectionValue(connName));
+                conn.Open();
+                sql = "SELECT crew.* FROM crew JOIN flight on flight.FLIGHTNO = crew.FlightNo WHERE flight.FLIGHTNO = '"
+                + textBox1.Text + "'";
 
+                adapter = new iDB2DataAdapter(sql, conn);
+                dataSet = new DataSet();
+                adapter.Fill(dataSet);
+
+                // clears the list box everytime a new button is pressed
+                listBox1.Items.Clear();
+
+                //loop through the dataTable row adding data row to listbox
+                foreach (DataRow dataRow in dataSet.Tables[0].Rows)
+                    //Columns[].ColumnName is how you add the column name with the data in the table
+                    //Lines 61-66 displays the column name and the data associated with its respected column when the button is clicked
+                    //Data rows and columns work like arrays 
+                  listBox1.Items.Add(dataSet.Tables[0].Columns[2].ColumnName + ": " + dataRow[2] + ",  " +
+                                     dataSet.Tables[0].Columns[3].ColumnName + ": " + dataRow[3] + ",  " +
+                                     dataSet.Tables[0].Columns[4].ColumnName + ": " + dataRow[4] + ",  " +
+                                     dataSet.Tables[0].Columns[5].ColumnName + ": " + dataRow[5] + ",  " +
+                                     dataSet.Tables[0].Columns[6].ColumnName + ": " + dataRow[6] + ",  " +
+                                     dataSet.Tables[0].Columns[7].ColumnName + ": " + dataRow[7]);
+                conn.Close();
             }
+           
             catch (Exception ex)
             {
                 listBox1.Items.Add(ex.Message);

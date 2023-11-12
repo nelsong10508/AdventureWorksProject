@@ -1,4 +1,6 @@
-﻿using System;
+﻿using IBM.Data.DB2.iSeries;
+using InsertPractice;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,12 +15,9 @@ namespace PixisAirGroupProject
 {
     public partial class RoutesAndCities : Form
     {
-        SqlConnection connection;
-        string connectionString;
-        string SQL;
-        //use dataAdabpter and DataSet opposed to command object and DataReader
-        SqlDataAdapter adapter;
-        DataSet data;
+        iDB2Connection conn;
+        iDB2DataAdapter adapter;
+        DataSet dataSet;
 
         public RoutesAndCities()
         {
@@ -27,7 +26,9 @@ namespace PixisAirGroupProject
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Form1 form1 = new Form1();
+            form1.Show();
+            this.Hide();
         }
 
         private void routeBtn_Click(object sender, EventArgs e)
@@ -35,26 +36,34 @@ namespace PixisAirGroupProject
             // clears the list box everytime a new button is pressed
             listBox1.Items.Clear();
 
-            connectionString = "Data Source=V2StudentPOC;Initial Catalog=PixisAir;" +
-               "Persist Security Info=True;User ID=student;Password=ichooseGateway";
-            SQL = "SELECT * FROM PixisAir.dbo.Route";
+            string sql;
+            string connName = "IBMConnectionStringDev";
+
             try
             {
-                //create connection string object using the connection string parameter
-                connection = new SqlConnection(connectionString);
-                //create SqlDataAdapter passing in the SQL string and the connection string 
-                adapter = new SqlDataAdapter(SQL, connection);
                 //create a dataSet
-                data = new DataSet();
-                adapter.Fill(data);
-                //loop through the dataTable row adding data row to listbox
-                foreach (DataRow dataRow in data.Tables[0].Rows)
-                    listBox1.Items.Add(data.Tables[0].Columns[8].ColumnName + ": " + dataRow[8] + ",  " +
-                                      data.Tables[0].Columns[1].ColumnName + ": " + dataRow[1] + ",  " +
-                                      data.Tables[0].Columns[2].ColumnName + ": " + dataRow[2]);
-                connection.Close();//close the connection
+                conn = new iDB2Connection(DataHelper.ConnectionValue(connName));
+                conn.Open();
+                sql = "SELECT * FROM Route";
+                adapter = new iDB2DataAdapter(sql, conn);
 
+                dataSet = new DataSet();
+                adapter.Fill(dataSet);
+
+                // clears the list box everytime a new button is pressed
+                listBox1.Items.Clear();
+
+                //loop through the dataTable row adding data row to listbox
+                foreach (DataRow dataRow in dataSet.Tables[0].Rows)
+                    //Columns[].ColumnName is how you add the column name with the data in the table
+                    //Lines 62-64 displays the column name and the data associated with its respected column when the button is clicked
+                    //Data rows and columns work like arrays 
+                    listBox1.Items.Add(dataSet.Tables[0].Columns[8].ColumnName + ": " + dataRow[8] + ",  " +
+                                       dataSet.Tables[0].Columns[1].ColumnName + ": " + dataRow[1] + ",  " +
+                                       dataSet.Tables[0].Columns[2].ColumnName + ": " + dataRow[2]);
+                conn.Close();
             }
+           
             catch (Exception ex)
             {
                 listBox1.Items.Add(ex.Message);

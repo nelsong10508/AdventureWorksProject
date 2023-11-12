@@ -38,43 +38,51 @@ namespace PixisAirGroupProject
         private void flightBtn_Click(object sender, EventArgs e)
         {
             Flights secondForm = new Flights();
-            secondForm.ShowDialog();
+            secondForm.Show();
+            this.Hide();
+
         }
 
         private void airplaneBtn_Click(object sender, EventArgs e)
         {
             Airplane thirdForm = new Airplane();
-            thirdForm.ShowDialog();
+            thirdForm.Show();
+            this.Hide();
         }
 
         private void cityBtn_Click(object sender, EventArgs e)
         {
             RoutesAndCities fourthForm = new RoutesAndCities();
-            fourthForm.ShowDialog();
+            fourthForm.Show();
+            this.Hide();
         }
 
         private void citiesBtn_Click(object sender, EventArgs e)
         {
             DepartAndArrival fifthForm = new DepartAndArrival();
-            fifthForm.ShowDialog();
+            fifthForm.Show();
+            this.Hide();
         }
 
         private void airportBtn_Click(object sender, EventArgs e)
         {
             Airports sixthForm = new Airports();
-            sixthForm.ShowDialog();
+            sixthForm.Show();
+            this.Hide();
         }
 
         private void crewBtn_Click(object sender, EventArgs e)
         {
             Crew seventhForm = new Crew();
-            seventhForm.ShowDialog();
+            seventhForm.Show();
+            this.Hide();
         }
 
         private void logsBtn_Click(object sender, EventArgs e)
         {
             Maintenance eigthForm = new Maintenance();
-            eigthForm.ShowDialog();
+            eigthForm.Show();
+            this.Hide();
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -85,44 +93,51 @@ namespace PixisAirGroupProject
         private void flightsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Flights secondForm = new Flights();
-            secondForm.ShowDialog();
+            secondForm.Show();
+            this.Hide();
         }
 
         private void airplanesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Airplane thirdForm = new Airplane();
-            thirdForm.ShowDialog();
+            thirdForm.Show();
+            this.Hide();
         }
 
 
         private void routesWithCityNameToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RoutesAndCities fourthForm = new RoutesAndCities();
-            fourthForm.ShowDialog();
+            fourthForm.Show();
+            this.Hide();
         }
 
         private void departingAndArrivingCitiesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DepartAndArrival fifthForm = new DepartAndArrival();
-            fifthForm.ShowDialog();
+            fifthForm.Show();
+            this.Hide();
         }
 
         private void allAirportsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Airports sixthForm = new Airports();
-            sixthForm.ShowDialog();
+            sixthForm.Show();
+            this.Hide();
         }
 
         private void flightCrewToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Crew seventhForm = new Crew();
-            seventhForm.ShowDialog();
+            seventhForm.Show();
+            this.Hide();
         }
 
         private void maintenanceLogsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Maintenance eigthForm = new Maintenance();
-            eigthForm.ShowDialog();
+            eigthForm.Show();
+            this.Hide();
         }
     }
 }

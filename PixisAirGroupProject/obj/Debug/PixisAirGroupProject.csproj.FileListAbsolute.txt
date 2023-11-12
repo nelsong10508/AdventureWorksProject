@@ -16,3 +16,6 @@ C:\Users\1212896\source\repos\PixisAirGroupProject\PixisAirGroupProject\obj\Debu
 C:\Users\1212896\source\repos\PixisAirGroupProject\PixisAirGroupProject\obj\Debug\PixisAirGroupProject.Airports.resources
 C:\Users\1212896\source\repos\PixisAirGroupProject\PixisAirGroupProject\obj\Debug\PixisAirGroupProject.Crew.resources
 C:\Users\1212896\source\repos\PixisAirGroupProject\PixisAirGroupProject\obj\Debug\PixisAirGroupProject.Maintenance.resources
+C:\Users\1212896\source\repos\PixisAirGroupProject\PixisAirGroupProject\bin\Debug\IBM.Data.DB2.iSeries.dll
+C:\Users\1212896\source\repos\PixisAirGroupProject\PixisAirGroupProject\bin\Debug\IBM.Data.DB2.iSeries.xml
+C:\Users\1212896\source\repos\PixisAirGroupProject\PixisAirGroupProject\obj\Debug\PixisAirGroupProject.csproj.CopyComplete
