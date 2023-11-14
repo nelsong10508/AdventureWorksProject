@@ -8,17 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using IBM.Data.DB2.iSeries;
 
 namespace PixisAirGroupProject
 {
     public partial class Form1 : Form
     {
-        SqlConnection connection;
-        string connectionString;
-        string SQL;
-        //use dataAdabpter and DataSet opposed to command object and DataReader
-        SqlDataAdapter adapter;
-        DataSet data;
 
         public Form1()
         {
@@ -137,6 +132,34 @@ namespace PixisAirGroupProject
         {
             Maintenance eigthForm = new Maintenance();
             eigthForm.Show();
+            this.Hide();
+        }
+
+        private void addAirplane_Click(object sender, EventArgs e)
+        {
+            AddAirplane ninthForm = new AddAirplane();
+            ninthForm.Show();
+            this.Hide();
+        }
+
+        private void addResHistBtn_Click(object sender, EventArgs e)
+        {
+            AddResHist tenthForm = new AddResHist();
+            tenthForm.Show();
+            this.Hide();
+        }
+
+        private void addAirplaneToAirplaneTableToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddAirplane ninthForm = new AddAirplane();
+            ninthForm.Show();
+            this.Hide();
+        }
+
+        private void addRecordToResHistTableToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddResHist tenthForm = new AddResHist();
+            tenthForm.Show();
             this.Hide();
         }
     }

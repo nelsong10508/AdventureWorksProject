@@ -51,6 +51,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddAirplane.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddAirplane.Designer.cs">
+      <DependentUpon>AddAirplane.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddResHist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddResHist.Designer.cs">
+      <DependentUpon>AddResHist.cs</DependentUpon>
+    </Compile>
     <Compile Include="Airplane.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +129,12 @@
     <Compile Include="RoutesAndCities.Designer.cs">
       <DependentUpon>RoutesAndCities.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddAirplane.resx">
+      <DependentUpon>AddAirplane.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddResHist.resx">
+      <DependentUpon>AddResHist.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Airplane.resx">
       <DependentUpon>Airplane.cs</DependentUpon>
     </EmbeddedResource>
