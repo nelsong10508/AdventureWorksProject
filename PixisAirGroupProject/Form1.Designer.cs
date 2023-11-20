@@ -82,6 +82,7 @@
             // 
             // cityBtn
             // 
+            this.cityBtn.ForeColor = System.Drawing.SystemColors.ControlText;
             this.cityBtn.Location = new System.Drawing.Point(156, 288);
             this.cityBtn.Name = "cityBtn";
             this.cityBtn.Size = new System.Drawing.Size(89, 38);
@@ -142,6 +143,7 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.flightsToolStripMenuItem,
@@ -169,7 +171,7 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -307,6 +309,7 @@
             this.addRouteBtn.TabIndex = 13;
             this.addRouteBtn.Text = "Add to Route Table";
             this.addRouteBtn.UseVisualStyleBackColor = true;
+           
             // 
             // addAirportBtn
             // 
@@ -321,6 +324,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Highlight;
             this.ClientSize = new System.Drawing.Size(857, 450);
             this.Controls.Add(this.addAirportBtn);
             this.Controls.Add(this.addRouteBtn);
