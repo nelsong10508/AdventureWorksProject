@@ -16,6 +16,7 @@ namespace PixisAirGroupProject
 {
     public partial class Maintenance : Form
     {
+        // establishing the connection to the I
         iDB2Connection conn;
         iDB2DataAdapter adapter;
         DataSet dataSet;
@@ -27,6 +28,7 @@ namespace PixisAirGroupProject
 
         private void exitBtn_Click(object sender, EventArgs e)
         {
+            //exits from this form back to the main form
             Form1 form1 = new Form1();
             form1.Show();
             this.Hide();
@@ -57,7 +59,7 @@ namespace PixisAirGroupProject
                 //loop through the dataTable row adding data row to listbox
                 foreach (DataRow dataRow in dataSet.Tables[0].Rows)
                     //Columns[].ColumnName is how you add the column name with the data in the table
-                    //Lines 62-68 displays the column name and the data associated with its respected column when the button is clicked
+                    //Lines 64-70 displays the column name and the data associated with its respected column when the button is clicked
                     //Data rows and columns work like arrays 
                     listBox1.Items.Add(dataSet.Tables[0].Columns[0].ColumnName + ": " + dataRow[0] + ",  " +
                                        dataSet.Tables[0].Columns[1].ColumnName + ": " + dataRow[1] + ",  " +
@@ -69,37 +71,7 @@ namespace PixisAirGroupProject
 
                 conn.Close();
             }
-            /*// clears the list box everytime a new button is pressed
-            listBox1.Items.Clear();
-
-            connectionString = "Data Source=V2StudentPOC;Initial Catalog=PixisAir;" +
-               "Persist Security Info=True;User ID=student;Password=ichooseGateway";
-
-            SQL = "SELECT * FROM MaintLog";
-            try
-            {
-                //create connection string object using the connection string parameter
-                connection = new SqlConnection(connectionString);
-                //create SqlDataAdapter passing in the SQL string and the connection string 
-                adapter = new SqlDataAdapter(SQL, connection);
-                //create a dataSet
-                data = new DataSet();
-                adapter.Fill(data);
-                //loop through the dataTable row adding data row to listbox
-                foreach (DataRow dataRow in data.Tables[0].Rows)
-                    //Columns[].ColumnName is how you add the column name with the data in the table
-                    //Lines 56-69 rows and columns work like arrays 
-                    listBox1.Items.Add(data.Tables[0].Columns[0].ColumnName + ": " + dataRow[0] + ",  " +
-                                       data.Tables[0].Columns[1].ColumnName + ": " + dataRow[1] + ",  " +
-                                       data.Tables[0].Columns[2].ColumnName + ": " + dataRow[2] + ",  " +
-                                       data.Tables[0].Columns[3].ColumnName + ": " + dataRow[3] + ",  " +
-                                       data.Tables[0].Columns[4].ColumnName + ": " + dataRow[4] + ",  " +
-                                       data.Tables[0].Columns[5].ColumnName + ": " + dataRow[5] + ",  " +
-                                       data.Tables[0].Columns[6].ColumnName + ": " + dataRow[6]);
-
-                connection.Close();//close the connection
-
-            }*/
+           
             catch (Exception ex)
             {
                 listBox1.Items.Add(ex.Message);

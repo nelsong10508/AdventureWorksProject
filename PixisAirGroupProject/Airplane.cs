@@ -16,6 +16,7 @@ namespace PixisAirGroupProject
 
     public partial class Airplane : Form
     {
+        // establishing the connection to the I
         iDB2Connection conn;
         iDB2DataAdapter adapter;
         DataSet dataSet; 
@@ -27,6 +28,7 @@ namespace PixisAirGroupProject
 
         private void exitBtn_Click(object sender, EventArgs e)
         {
+            //exits from this form back to the main form
             Form1 form1 = new Form1();
             form1.Show();
             this.Hide();
@@ -38,6 +40,7 @@ namespace PixisAirGroupProject
             listBox1.Items.Clear();
 
             string sql;
+            // conection name from data helper
             string connName = "IBMConnectionStringDev";
 
             try
@@ -57,7 +60,7 @@ namespace PixisAirGroupProject
                 //loop through the dataTable row adding data row to listbox
                 foreach (DataRow dataRow in dataSet.Tables[0].Rows)
                     //Columns[].ColumnName is how you add the column name with the data in the table
-                    //Lines 63-65 displays the column name and the data associated with its respected column when the button is clicked
+                    //Lines 64-66 displays the column name and the data associated with its respected column when the button is clicked
                     //Data rows and columns work like arrays 
                     listBox1.Items.Add(dataSet.Tables[0].Columns[0].ColumnName + ": " + dataRow[0] + ",  " +
                                        dataSet.Tables[0].Columns[6].ColumnName + ": " + dataRow[6] + ",  " +

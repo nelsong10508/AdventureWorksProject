@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.routeBtn = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.exitBtn = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
@@ -44,15 +44,15 @@
             this.routeBtn.UseVisualStyleBackColor = true;
             this.routeBtn.Click += new System.EventHandler(this.routeBtn_Click);
             // 
-            // button2
+            // exitBtn
             // 
-            this.button2.Location = new System.Drawing.Point(713, 405);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 33);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "EXIT";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.exitBtn.Location = new System.Drawing.Point(713, 405);
+            this.exitBtn.Name = "exitBtn";
+            this.exitBtn.Size = new System.Drawing.Size(75, 33);
+            this.exitBtn.TabIndex = 1;
+            this.exitBtn.Text = "EXIT";
+            this.exitBtn.UseVisualStyleBackColor = true;
+            this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
             // 
             // listBox1
             // 
@@ -69,7 +69,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.exitBtn);
             this.Controls.Add(this.routeBtn);
             this.Name = "RoutesAndCities";
             this.Text = "RoutesAndCities";
@@ -81,7 +81,7 @@
         #endregion
 
         private System.Windows.Forms.Button routeBtn;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button exitBtn;
         private System.Windows.Forms.ListBox listBox1;
     }
 }

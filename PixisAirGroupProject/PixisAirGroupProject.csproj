@@ -51,6 +51,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Add Airport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add Airport.Designer.cs">
+      <DependentUpon>Add Airport.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddAirplane.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +68,12 @@
     </Compile>
     <Compile Include="AddResHist.Designer.cs">
       <DependentUpon>AddResHist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddRoute.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddRoute.Designer.cs">
+      <DependentUpon>AddRoute.cs</DependentUpon>
     </Compile>
     <Compile Include="Airplane.cs">
       <SubType>Form</SubType>
@@ -129,11 +141,17 @@
     <Compile Include="RoutesAndCities.Designer.cs">
       <DependentUpon>RoutesAndCities.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Add Airport.resx">
+      <DependentUpon>Add Airport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddAirplane.resx">
       <DependentUpon>AddAirplane.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddResHist.resx">
       <DependentUpon>AddResHist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddRoute.resx">
+      <DependentUpon>AddRoute.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Airplane.resx">
       <DependentUpon>Airplane.cs</DependentUpon>

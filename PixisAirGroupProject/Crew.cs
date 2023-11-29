@@ -15,6 +15,7 @@ namespace PixisAirGroupProject
 {
     public partial class Crew : Form
     {
+        // establishing the connection to the I
         iDB2Connection conn;
         iDB2DataAdapter adapter;
         DataSet dataSet;
@@ -25,6 +26,7 @@ namespace PixisAirGroupProject
 
         private void exitBtn_Click(object sender, EventArgs e)
         {
+            //exits from this form back to the main form
             Form1 form1 = new Form1();
             form1.Show();
             this.Hide();
@@ -36,6 +38,7 @@ namespace PixisAirGroupProject
             listBox1.Items.Clear();
 
             string sql;
+            // conection name from data helper
             string connName = "IBMConnectionStringDev";
 
             try
@@ -43,6 +46,9 @@ namespace PixisAirGroupProject
                 //create a dataSet
                 conn = new iDB2Connection(DataHelper.ConnectionValue(connName));
                 conn.Open();
+
+                /* at the end of the SQL statement is how we entered the data into the text box
+                  and displayed the departing and arrival cities */
                 sql = "SELECT crew.* FROM crew JOIN flight on flight.FLIGHTNO = crew.FlightNo WHERE flight.FLIGHTNO = '"
                 + textBox1.Text + "'";
 
@@ -56,7 +62,7 @@ namespace PixisAirGroupProject
                 //loop through the dataTable row adding data row to listbox
                 foreach (DataRow dataRow in dataSet.Tables[0].Rows)
                     //Columns[].ColumnName is how you add the column name with the data in the table
-                    //Lines 61-66 displays the column name and the data associated with its respected column when the button is clicked
+                    //Lines 67-72 displays the column name and the data associated with its respected column when the button is clicked
                     //Data rows and columns work like arrays 
                   listBox1.Items.Add(dataSet.Tables[0].Columns[2].ColumnName + ": " + dataRow[2] + ",  " +
                                      dataSet.Tables[0].Columns[3].ColumnName + ": " + dataRow[3] + ",  " +

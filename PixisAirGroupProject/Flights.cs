@@ -15,6 +15,7 @@ namespace PixisAirGroupProject
 {
     public partial class Flights : Form
     {
+        // establishing the connection to the I
         iDB2Connection conn;
         iDB2DataAdapter adapter;
         DataSet dataSet;
@@ -25,6 +26,8 @@ namespace PixisAirGroupProject
 
         private void exitBtn_Click(object sender, EventArgs e)
         {
+            //exits from this form back to the main form
+
             Form1 form1 = new Form1();
             form1.Show();
             this.Hide();
@@ -36,6 +39,8 @@ namespace PixisAirGroupProject
             listBox1.Items.Clear();
 
             string sql;
+
+            // conection name from data helper
             string connName = "IBMConnectionStringDev";
 
             try

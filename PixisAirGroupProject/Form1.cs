@@ -163,7 +163,33 @@ namespace PixisAirGroupProject
             this.Hide();
         }
 
-       
+        private void addAirportBtn_Click(object sender, EventArgs e)
+        {
+            Add_Airport eleventhForm = new Add_Airport();
+            eleventhForm.Show();
+            this.Hide();
+        }
+
+        private void addToAirportTableToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Add_Airport eleventhForm = new Add_Airport();
+            eleventhForm.Show();
+            this.Hide();
+        }
+
+        private void addRouteBtn_Click(object sender, EventArgs e)
+        {
+            AddRoute twelfthForm = new AddRoute();
+            twelfthForm.Show();
+            this.Hide();
+        }
+
+        private void addToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddRoute twelfthForm = new AddRoute();
+            twelfthForm.Show();
+            this.Hide();
+        }
     }
 }
 

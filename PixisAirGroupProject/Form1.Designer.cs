@@ -240,12 +240,14 @@
             this.addToAirportTableToolStripMenuItem.Name = "addToAirportTableToolStripMenuItem";
             this.addToAirportTableToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
             this.addToAirportTableToolStripMenuItem.Text = "Add to Airport to Airport Table";
+            this.addToAirportTableToolStripMenuItem.Click += new System.EventHandler(this.addToAirportTableToolStripMenuItem_Click);
             // 
             // addToolStripMenuItem
             // 
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
             this.addToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
             this.addToolStripMenuItem.Text = "Add Route to Route Table";
+            this.addToolStripMenuItem.Click += new System.EventHandler(this.addToolStripMenuItem_Click);
             // 
             // addRecordToResHistTableToolStripMenuItem
             // 
@@ -309,7 +311,7 @@
             this.addRouteBtn.TabIndex = 13;
             this.addRouteBtn.Text = "Add to Route Table";
             this.addRouteBtn.UseVisualStyleBackColor = true;
-           
+            this.addRouteBtn.Click += new System.EventHandler(this.addRouteBtn_Click);
             // 
             // addAirportBtn
             // 
@@ -319,6 +321,7 @@
             this.addAirportBtn.TabIndex = 14;
             this.addAirportBtn.Text = "Add to Airport Table";
             this.addAirportBtn.UseVisualStyleBackColor = true;
+            this.addAirportBtn.Click += new System.EventHandler(this.addAirportBtn_Click);
             // 
             // Form1
             // 
